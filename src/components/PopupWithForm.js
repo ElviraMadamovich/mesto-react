@@ -16,7 +16,7 @@ function PopupWithForm({
 
   return (
 
-    <section className={`popup ${name}-popup ${isOpen ? "popup_opened" : ""}`}
+    <section className={`popup ${name}-popup ${isOpen ? `popup_opened` : ""}`}
       onClick={handleOverlayClose} >
       <div className="popup__container">
         <button type="button" className="popup__close" onClick={onClose} />

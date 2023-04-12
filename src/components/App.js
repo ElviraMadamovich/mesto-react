@@ -9,7 +9,6 @@ function App() {
   const [isProfilePopupOpen, setProfilePopupOpen] = React.useState(false);
   const [isCardPopupOpen, setCardPopupOpen] = React.useState(false);
   const [isAvatarPopupOpen, setAvatarPopupOpen] = React.useState(false);
-  const [isConfirmationPopupOpen, setConfirmationPopupOpen] = React.useState(false);
   const [selectedCard, setSelectedCard] = React.useState({});
 
   function handleCardClick(selectedCard) {
@@ -28,15 +27,10 @@ function App() {
     setCardPopupOpen(true);
   }
 
-  function handleDeleteButtonClick() {
-    setConfirmationPopupOpen(true);
-  }
-
   function closeAllPopups() {
     setAvatarPopupOpen(false)
     setProfilePopupOpen(false)
     setCardPopupOpen(false)
-    setConfirmationPopupOpen(false)
     setSelectedCard({})
   }
 
@@ -47,7 +41,6 @@ function App() {
         onEditAvatar={handleAvatarButtonClick}
         onEditProfile={handleEditButtonClick}
         onAddPlace={handleAddButtonClick}
-        onConfirmation={handleDeleteButtonClick}
         onCardClick={handleCardClick}
       />
       <Footer />
@@ -120,8 +113,8 @@ function App() {
       </PopupWithForm >
 
       <ImagePopup
-      element={selectedCard}
-      onClose={closeAllPopups} />
+        element={selectedCard}
+        onClose={closeAllPopups} />
 
       <PopupWithForm
         title={'Обновить аватар'}
@@ -141,14 +134,6 @@ function App() {
         <span
           className="popup__error popup__error_active popup__error_avatar"
           id="avatar-error" />
-      </PopupWithForm>
-
-      <PopupWithForm
-        title={'Вы уверены?'}
-        isOpen={isConfirmationPopupOpen}
-        name="confirmation"
-        onClose={closeAllPopups}
-        buttonDescription={'Да'}>
       </PopupWithForm>
 
     </div >

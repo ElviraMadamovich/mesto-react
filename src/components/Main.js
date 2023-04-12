@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./Card";
 import { api } from "../utils/Api";
 
-function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick }) {
+function Main(props) {
   const [name, setUserName] = React.useState('');
   const [work, setUserWork] = React.useState('');
   const [avatar, setUserAvatar] = React.useState('');
@@ -24,16 +24,16 @@ function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick }) {
   return (
     <main>
       <section className="profile">
-        <button className="profile__button-avatar" type="button" onClick={onEditAvatar}></button>
+        <button onClick={props.onEditAvatar} className="profile__button-avatar" name="avatar-button" aria-label="avatar-button" type="button"></button>
         <img className="profile__image" src={avatar} alt="Аватар" />
         <div className="profile__author">
           <div className="profile__name">
             <h1 className="profile__title">{name}</h1>
-            <button type="button" className="profile__edit" onClick={onEditProfile}></button>
+            <button onClick={props.onEditProfile} type="button" className="profile__edit" name="edit-button" aria-label="edit-button"></button>
           </div>
           <p className="profile__subtitle">{work}</p>
         </div>
-        <button type="button" className="profile__button" onClick={onAddPlace}></button>
+        <button onClick={props.onAddPlace} type="button" className="profile__button" name="card-button" aria-label="card-button"></button>
       </section>
       <section className="elements">
         <ul className="elements__pics">
@@ -42,7 +42,7 @@ function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick }) {
               <Card
                 key={element._id}
                 element={element}
-                onCardClick={onCardClick}
+                onCardClick={props.onCardClick}
                 name={element.name}
                 link={element.link}
               />

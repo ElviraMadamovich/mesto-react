@@ -1,0 +1,31 @@
+.profile__button-avatar {
+    all: unset;
+    min-width: 120px;
+    min-height: 120px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.profile__button-avatar:hover {
+    opacity: 1;
+    background-image: url(../../../images/button-avatar.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18px 19px;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+@media screen and (max-width: 1000px) {
+    .profile__button-avatar {
+        margin: 0;
+        left: 28.7%;
+        max-width: 120px;
+        max-height: 120px;
+        height: 100%;
+    }
+}

@@ -7,12 +7,14 @@
     position: absolute;
     top: 0;
     left: 0;
+    opacity: 0;
     cursor: pointer;
-    transition: 0.2s;
+    transition: opacity 0.2s ease-in-out;  
 }
 
 .profile__button-avatar:hover {
     opacity: 1;
+    display: block;
     background-image: url(../../../images/button-avatar.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -24,8 +26,8 @@
     .profile__button-avatar {
         margin: 0;
         left: 28.7%;
-        max-width: 120px;
-        max-height: 120px;
+        max-width: 125px;
+        max-height: 125px;
         height: 100%;
     }
 }

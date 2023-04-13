@@ -50,6 +50,7 @@ function App() {
         name="profile"
         onClose={closeAllPopups}
         buttonDescription={'Сохранить'}>
+
         <input
           type="text"
           className="popup__content popup__content_input_name"
@@ -64,7 +65,8 @@ function App() {
           className="popup__error popup__error_active popup__error_name"
           id="name-error" />
 
-        <input type="text"
+        <input
+          type="text"
           className="popup__content popup__content_input_work"
           id="work"
           name="work"

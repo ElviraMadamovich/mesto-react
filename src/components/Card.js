@@ -1,12 +1,6 @@
 import React from "react";
 
-function Card({
-  element,
-  onCardClick,
-  name,
-  link,
-  onCardLike,
-  onDeleteButtonClick }) {
+function Card({ element, onCardClick, name, link, onCardLike, onDeleteButtonClick }) {
 
   const handleCardClick = () => {
     onCardClick(element);

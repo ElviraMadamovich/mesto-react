@@ -1,11 +1,8 @@
 import React from "react";
 
-function ImagePopup({
-  element,
-  onClose }) {
+function ImagePopup({ element, onClose }) {
 
   return (
-
     <section className={`popup image-popup ${element.link ? 'popup_opened' : ''}`}>
       <div className="image-popup__container">
         <button type="button" className="popup__close" onClick={onClose}></button>

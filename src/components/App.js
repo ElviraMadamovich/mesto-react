@@ -48,8 +48,7 @@ function App() {
         title={'Редактировать профиль'}
         isOpen={isProfilePopupOpen}
         name="profile"
-        onClose={closeAllPopups}
-        buttonDescription={'Сохранить'}>
+        onClose={closeAllPopups}>
 
         <input
           type="text"
@@ -84,8 +83,7 @@ function App() {
         title={'Новое место'}
         isOpen={isCardPopupOpen}
         name="card"
-        onClose={closeAllPopups}
-        buttonDescription={'Сохранить'}>
+        onClose={closeAllPopups}>
 
         <input
           type="text"
@@ -122,8 +120,7 @@ function App() {
         title={'Обновить аватар'}
         isOpen={isAvatarPopupOpen}
         name="avatar"
-        onClose={closeAllPopups}
-        buttonDescription={'Сохранить'}>
+        onClose={closeAllPopups}>
 
         <input
           type="url"

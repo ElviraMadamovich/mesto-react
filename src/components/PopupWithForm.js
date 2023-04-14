@@ -23,7 +23,7 @@ function PopupWithForm({
         <h2 className="popup__order">{title}</h2>
         <form name={`${name}`} method="post" target="_parent" action="#" encType="application/x-www-form-urlencoded" className={`popup__form ${name}-popup__form`} noValidate>
           {children}
-          <button type="submit" className="popup__confirm">{buttonDescription}</button>
+          <button type="submit" className="popup__confirm">{buttonDescription || 'Сохранить'}</button>
         </form>
       </div>
     </section >

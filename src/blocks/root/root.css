@@ -1,5 +1,5 @@
 .root {
-    max-width: 1280px;
+    min-width: 1280px;
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 1);
     font-family: 'Inter', sans-serif;
@@ -20,10 +20,4 @@
 
 * {
     scroll-behavior: smooth;
-}
-
-@media screen and (max-width: 1279px) {
-    .root {
-        width: 100%;
-    }
 }

@@ -1,14 +1,14 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import Card from "./Card";
 import { api } from "../utils/Api";
 
-function Main({onEditProfile, onEditAvatar, onAddPlace, onCardClick}) {
-  const [name, setUserName] = React.useState('');
-  const [work, setUserWork] = React.useState('');
-  const [avatar, setUserAvatar] = React.useState('');
-  const [elements, setItem] = React.useState([]);
+function Main({ onEditProfile, onEditAvatar, onAddPlace, onCardClick }) {
+  const [name, setUserName] = useState('');
+  const [work, setUserWork] = useState('');
+  const [avatar, setUserAvatar] = useState('');
+  const [elements, setItem] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     Promise.all([api.getUserInfo(), api.getInitialCards()])
       .then(([user, element]) => {
         setUserName(user.name);

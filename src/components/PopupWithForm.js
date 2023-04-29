@@ -6,7 +6,9 @@ function PopupWithForm({
   children,
   buttonDescription,
   isOpen,
-  onClose }) {
+  onClose,
+  onSubmit
+}) {
 
   function handleOverlayClose(event) {
     if (event.target.classList.contains('popup')) {
@@ -15,13 +17,12 @@ function PopupWithForm({
   }
 
   return (
-
     <section className={`popup ${name}-popup ${isOpen ? `popup_opened` : ""}`}
-      onClick={handleOverlayClose} >
+      onClick={handleOverlayClose}>
       <div className="popup__container">
         <button type="button" className="popup__close" onClick={onClose} />
         <h2 className="popup__order">{title}</h2>
-        <form name={`${name}`} method="post" target="_parent" action="#" encType="application/x-www-form-urlencoded" className={`popup__form ${name}-popup__form`} noValidate>
+        <form name={`${name}`} method="post" target="_parent" action="#" encType="application/x-www-form-urlencoded" onSubmit={onSubmit} className={`popup__form ${name}-popup__form`} noValidate>
           {children}
           <button type="submit" className="popup__confirm">{buttonDescription || 'Сохранить'}</button>
         </form>

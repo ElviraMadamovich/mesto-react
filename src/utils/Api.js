@@ -1,4 +1,4 @@
-export default class Api {
+class Api {
   constructor({ url, headers }) {
     this._url = url;
     this._headers = headers;
@@ -23,8 +23,8 @@ export default class Api {
       method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify({
-        name: `${data.name}`,
-        about: `${data.work}`
+        name: data.name,
+        about: data.about
       })
     })
       .then(res => this._checkResponse(res));
@@ -35,7 +35,7 @@ export default class Api {
       method: 'POST',
       headers: this._headers,
       body: JSON.stringify({
-        name: data.caption,
+        name: data.name,
         link: data.link
       })
     })
@@ -66,12 +66,20 @@ export default class Api {
       .then(this._checkResponse);
   }
 
+  toggleLike(cardId, isLiked) {
+    if (isLiked) {
+      return this.removeLike(cardId);
+    } else {
+      return this.putLike(cardId);
+    }
+  }
+
   changeUserAvatar(avatar) {
     return fetch(this._url + "/users/me/avatar", {
       method: 'PATCH',
       headers: this._headers,
       body: JSON.stringify({
-        avatar: avatar.avatar
+        avatar
       }),
     })
       .then(res => this._checkResponse(res));
@@ -88,7 +96,7 @@ export default class Api {
 export const api = new Api({
   url: 'https://mesto.nomoreparties.co/v1/cohort-61',
   headers: {
-      authorization: '794ac1be-5763-4261-9759-e13254ae56ae',
-      'Content-Type': 'application/json',
-  },
-});
+    authorization: '794ac1be-5763-4261-9759-e13254ae56ae',
+    'Content-Type': 'application/json',
+  }
+})

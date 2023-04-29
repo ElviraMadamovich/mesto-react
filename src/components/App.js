@@ -148,7 +148,7 @@ function App() {
         <ConfirmationPopup
           isOpen={!!cardToBeDeleted}
           onClose={closeAllPopups}
-          onConfirm={handleConfirmCardDelete}
+          onConfirmation={handleConfirmCardDelete}
         />
 
         <ImagePopup card={selectedCard} onClose={closeAllPopups} />

@@ -1,10 +1,10 @@
 import React from "react";
 import PopupWithForm from "./PopupWithForm";
 
-function ConfirmationPopup({ isOpen, onClose, onConfirm }) {
+function ConfirmationPopup({ isOpen, onClose, onConfirmation }) {
   function handleSubmit(event) {
     event.preventDefault();
-    onConfirm();
+    onConfirmation();
   }
 
   return (

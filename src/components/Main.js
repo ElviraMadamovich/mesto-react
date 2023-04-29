@@ -21,10 +21,10 @@ function Main({
         <img className="profile__image" src={currentUser.avatar ?? userAvatar} alt="Аватар" />
         <div className="profile__author">
           <div className="profile__name">
-            <h1 className="profile__title">{currentUser.name ?? ". . ."}</h1>
+            <h1 className="profile__title">{currentUser.name ?? "Имя пользователя"}</h1>
             <button onClick={onEditProfile} type="button" className="profile__edit" name="edit-button" aria-label="edit-button"></button>
           </div>
-          <p className="profile__subtitle">{currentUser.about ?? ". . ."}</p>
+          <p className="profile__subtitle">{currentUser.about ?? "О пользователе"}</p>
         </div>
         <button onClick={onAddPlace} type="button" className="profile__button" name="card-button" aria-label="card-button"></button>
       </section>
